@@ -1,5 +1,6 @@
 import './App.css';
 import { Header } from './layout/header/Header';
+import { Contact } from './layout/sections/contact/Contact';
 import { Main } from './layout/sections/main/Main';
 import { Skills } from './layout/sections/skills/Skills';
 import { Testimony } from './layout/sections/testimony/Testimony';
@@ -15,6 +16,7 @@ function App() {
             <Skills/>
             <Works/>
             <Testimony/>
+            <Contact/>
         </div>
     );
 }
