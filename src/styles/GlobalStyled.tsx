@@ -24,6 +24,7 @@ export const GlobalStyled = createGlobalStyle`
 
     a {
         text-decoration: none;
+        color: ${theme.colors.font}
     }
 
     ul {
@@ -33,11 +34,13 @@ export const GlobalStyled = createGlobalStyle`
     button {
         background-color: unset;
         border: none;
+        cursor: pointer;
+        color: ${theme.colors.font}
     }
 
     section {
         padding: 100px 0;
-        
+
     }
 
     section:nth-of-type(odd) {
@@ -48,4 +51,15 @@ section:nth-of-type(even) {
         background-color: ${theme.colors.secondaryBg}
 }
 
+h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+p {
+    font-weight: 400;
+    font-size: 14px;
+}
 `
