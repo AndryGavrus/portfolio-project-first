@@ -42,7 +42,7 @@ const StyledForm = styled.form`
 const Field = styled.input`
     width: 100%;
     border: 1px solid ${theme.colors.borderColor};
-    width: 540px;
+    max-width: 540px;
     height: 32px;
     background-color: ${theme.colors.secondaryBg};
     padding: 7px 15px;
