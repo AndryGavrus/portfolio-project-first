@@ -50,7 +50,7 @@ const Name = styled.span`
     text-transform: uppercase;
     text-align: center;
     display: inline-block;
-    margin: 22px 0 42px;
+    margin: 22px 0 32px;
 
 `
 
