@@ -1,77 +1,26 @@
 import React from 'react'
-import styled from 'styled-components'
 import { FlexWrapper } from '../FlexWrapper'
-import { theme } from '../../styles/Theme'
+import { S } from './SLyder_Styles'
 
-export const Slider = () => {
+export const Slider: React.FC = () => {
     return (
-        <StyledSlyder>
+        <S.Slyder>
             <FlexWrapper>
-            <Slide>
-                <Text>
+            <S.Slide>
+                <S.Text>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </Text>
-                <Name>
+                </S.Text>
+                <S.Name>
                 @ivan ivanow
-                </Name>
-            </Slide>
+                </S.Name>
+            </S.Slide>
             </FlexWrapper>
-            <Pagination>
+            <S.Pagination>
                 <span></span>
                 <span className='active'></span>
                 <span></span>
-            </Pagination>
-        </StyledSlyder>
+            </S.Pagination>
+        </S.Slyder>
     )
 }
 
-const StyledSlyder = styled.div`
-    /* border: 1px solid red; */
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-`
-
-const Slide = styled.div`
-    text-align: center;
-`
-
-const Text = styled.p`
-    
-`
-
-const Name = styled.span`
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    text-align: center;
-    display: inline-block;
-    margin: 22px 0 32px;
-
-`
-
-const Pagination = styled.span`
-
-    span {
-        display: inline-block;
-        border-radius: 20px;
-        width: 7px;
-        height: 7px;
-        background-color: rgba(255, 255, 255, 0.5);
-
-        & + span {
-            margin-left: 5px;
-        }
-
-        &.active {
-            border-radius: 20px;
-            width: 20px;
-            height: 7px;
-            background-color: ${theme.colors.accent};
-        }
-    }
-`
