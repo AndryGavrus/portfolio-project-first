@@ -3,6 +3,7 @@ import { SectionTitle } from '../../../components/SectionTitle';
 import { Skill } from './skill/Skill';
 import { Container } from '../../../components/Container';
 import { S } from './Skills_Styles';
+import React from 'react';
 
 const SkillData = [
     {
@@ -42,7 +43,7 @@ const SkillData = [
     }
 ]
 
-export const Skills = () => {
+export const Skills: React.FC = () => {
     return (
         <S.Skills>
             <Container>
