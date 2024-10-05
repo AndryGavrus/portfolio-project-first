@@ -2,8 +2,9 @@ import styled from "styled-components"
 import { theme } from "../../styles/Theme"
 
 const Slyder = styled.div`
-    /* border: 1px solid red; */
+    border: 1px solid red;
     max-width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,9 +45,7 @@ const Pagination = styled.span`
         }
 
         &.active {
-            border-radius: 20px;
             width: 20px;
-            height: 7px;
             background-color: ${theme.colors.accent};
         }
     }
