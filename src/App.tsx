@@ -8,6 +8,7 @@ import { Testimony } from './layout/sections/testimony/Testimony';
 import { Works } from './layout/sections/works/Works';
 import { Slogan } from './layout/sections/slogan/Slogan';
 import { Particle } from './components/particle/Particle';
+import { GoTopBtn } from './components/goTopBtn/GoTopBtn';
 
 
 
@@ -23,6 +24,7 @@ function App() {
             <Contact/>
             <Slogan/>
             <Footer/>
+            <GoTopBtn/>
         </div>
     );
 }
