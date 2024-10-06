@@ -7,12 +7,14 @@ import { Skills } from './layout/sections/skills/Skills';
 import { Testimony } from './layout/sections/testimony/Testimony';
 import { Works } from './layout/sections/works/Works';
 import { Slogan } from './layout/sections/slogan/Slogan';
+import { Particle } from './components/particle/Particle';
 
 
 
 function App() {
     return (
         <div className="App">
+            <Particle/>
             <Header/>
             <Main/>
             <Skills/>

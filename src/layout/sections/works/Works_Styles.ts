@@ -5,8 +5,9 @@ import { Link } from "../../../components/Link"
 import { theme } from "../../../styles/Theme"
 
 const Works = styled.section`
-${FlexWrapper} {
-    gap: 30px;
+    position: relative;
+    ${FlexWrapper} {
+        gap: 30px;
 }
 `
 
@@ -94,7 +95,7 @@ const Text = styled.p`
     margin: 14px 0 10px;
 `
 
-export const S =  {
+export const S = {
     Works,
     Work,
     ImageWrapper,
