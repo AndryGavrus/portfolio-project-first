@@ -27,7 +27,10 @@ export const Link = styled.a <{active?:boolean}>`
         bottom: 6px;
         left: 0;
         right: 0;
+        height: 0;
         z-index: -1;
+
+        transition: ${theme.animations.transition};
 
         ${props => props.active && css<{active?: boolean}>`
         height: 10px;
