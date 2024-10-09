@@ -7,25 +7,26 @@ import timerImg from '../../../assets/images/time.png';
 import { Container } from '../../../components/Container';
 import { TabMenu, TabStatusType } from './tabMenu/TabMenu';
 import { S } from './Works_Styles';
+import { AnimatePresence, motion } from "framer-motion"
 
-const tabsItems: Array<{status: TabStatusType, title: string}> =[
+const tabsItems: Array<{ status: TabStatusType, title: string }> = [
     {
-        title:'All',
+        title: 'All',
         status: 'all',
     },
 
     {
-        title:'landing page',
+        title: 'landing page',
         status: 'landing',
     },
 
     {
-        title:'React',
+        title: 'React',
         status: 'react',
     },
 
     {
-        title:'spa',
+        title: 'spa',
         status: 'spa',
     },
 ]
@@ -35,14 +36,16 @@ const worksData = [
         title: 'Social Network',
         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         src: socialImg,
-        type: 'spa'
+        type: 'spa', 
+        id: 1
     },
 
     {
         title: 'Timer',
         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         src: timerImg,
-        type: 'react'
+        type: 'react',
+        id: 2
     }
 ]
 
@@ -51,15 +54,15 @@ export const Works: React.FC = () => {
     let filteredWorks = worksData
 
     if (curentFilterStatus == 'landing') {
-        filteredWorks =  worksData.filter(work => work.type === 'landing')
+        filteredWorks = worksData.filter(work => work.type === 'landing')
     }
 
     if (curentFilterStatus === 'react') {
-        filteredWorks =  worksData.filter(work => work.type === 'react')
+        filteredWorks = worksData.filter(work => work.type === 'react')
     }
 
     if (curentFilterStatus === 'spa') {
-        filteredWorks =  worksData.filter(work => work.type === 'spa')
+        filteredWorks = worksData.filter(work => work.type === 'spa')
     }
 
     function changeFilterStatus(value: TabStatusType) {
@@ -69,16 +72,28 @@ export const Works: React.FC = () => {
     return (
         <S.Works id='works'>
             <Container>
-            <SectionTitle>My Works</SectionTitle>
-            <TabMenu tabsItems={tabsItems} changeFilterStatus={changeFilterStatus} curentFilterStatus={curentFilterStatus}/>
-            <FlexWrapper justife='space-between' align='flex-start' wrap='wrap'>
-                {filteredWorks.map((w, index) => {
-                    return <Work key={index}
-                    title={w.title} 
-                    text={w.text} 
-                    src={w.src}/>
-                })}
-            </FlexWrapper>
+                <SectionTitle>My Works</SectionTitle>
+                <TabMenu tabsItems={tabsItems} changeFilterStatus={changeFilterStatus} curentFilterStatus={curentFilterStatus} />
+                <FlexWrapper justife='space-between' align='flex-start' wrap='wrap'>
+
+                    <AnimatePresence>
+                        {filteredWorks.map((w, index) => {
+                            return (
+                                <motion.div style={{width: '330px', flexGrow: 1, maxWidth: '540px'}}
+                                    layout
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    key={w.id}>
+                                    <Work key={w.id}
+                                        title={w.title}
+                                        text={w.text}
+                                        src={w.src}/>
+                                </motion.div>
+                            )
+                        })}
+                    </AnimatePresence>
+                </FlexWrapper>
             </Container>
         </S.Works>
     );
